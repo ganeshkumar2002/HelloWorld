@@ -120,7 +120,7 @@ router.options('/*', function(req, res) {
 // route of the micro app iframe
 router.get('/microApp', function(req, res) {
   if(!isAuthenticated(req)) {
-    return res.json({message: 'you are not authenticated'});
+    return res.json({message: 'you are not authenticated...'});
   }
   console.log('You called the micro app route!');
   res.sendFile(path.join(__dirname + '/public/microApp.html'));
@@ -129,7 +129,7 @@ router.get('/microApp', function(req, res) {
 // route of the contextual iframe - it will send the context in req.query.context
 router.get('/contextual', function(req, res) {
   if(!isAuthenticated(req)) {
-    return res.json({message: 'you are not authenticated'});
+    return res.json({message: 'you are not authenticated...'});
   }
   var context = req.query.context;
   try {
